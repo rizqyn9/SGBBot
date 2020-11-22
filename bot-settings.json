@@ -1,0 +1,15 @@
+{
+    "settingBot" : {
+        "MenerimaPanggilan" : "Gk bisa Telp",
+        "prefix" : "#"
+    },
+    "group" : {
+        "BotMasukGroup" : "Hai saya R - Bot",
+        "MemberBaru" : "Selamat datang",
+        "MemberKeluar" : "Selamat jalan"
+    },
+
+   
+
+
+}
