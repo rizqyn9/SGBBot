@@ -1,66 +1,80 @@
 const fs = require('fs-extra')
-const { 
-    prefix
-} = JSON.parse(fs.readFileSync('./settings/setting.json'))
+// const { 
+//     prefix
+// } = JSON.parse(fs.readFileSync('./settings/setting.json'))
+const {botName,
+    numberWA,
+    ownerNumber,
+    memberLimit,
+    groupLimit,
+    prefix,
+    waFeed,
+    waProblem,
+    cacheMessage,
+    botVersion} = require('./bot-setting.json')
 
 
 exports.textTnC = () => {
-    return `
-
-`    
+    return`
+    Syarat dan ketentuan penggunaan ${botName}:
+    
+    - Dilarang melakukan spam pada ${botName}, terutama menggunakan fitur download.
+    - Dilarang telepon ke nomor ${botName}, langsung *BLOCK OTOMATIS*.
+    - Jangan lupa donasi agar ${botName} tetap berjalan (*${prefix}donasi*).
+    - Semua privasi pengguna akan tetap aman, karena ${botName} ini sepenuhnya dijalankan pada sistem.
+    
+    Bila terjadi kerusakan atau masalah pada ${botName} bisa hubungi : ${waProblem}`
 }
+
 
 
 exports.textMenu = (pushname) => {
     return `
-Hi, ${pushname}! 👋️
+    Hai ${pushname} 🙌!
+Selamat menggunakan *${botName}* v${botVersion} dari R-Dev 🥳
 
-Ready Price List Diamond Free Fire via ID Only !
-#Reseller
-
-20 💎 Rp. 2.850
-50 💎 Rp. 6.840
-70 💎 Rp. 9.405
-100 💎 Rp. 13.680
-140 💎 Rp. 18.810
-210 💎 Rp. 28.215
-355 💎 Rp. 47.025
-425 💎 Rp. 56.430
-495 💎 Rp. 65.835
-720 💎 Rp. 94.050
-860 💎 Rp. 112.860
-1075 💎 Rp. 141.075
-2000 💎 Rp. 141.075
-`
+    
+Menu buat bos R-Dev
+    ➵ *${prefix}ban* 
+    ➵ *${prefix}bc* 
+    ➵ *${prefix}leaveall* 
+    ➵ *${prefix}clearall* 
+    
+Jangan lupa react dan donasi ya sob,
+    *${prefix}donasi*
+    
+    Terimakasih 😀`
 }
-
 
 
 exports.textAdmin = () => {
     return `
-⚠ [ *Admin Group Only* ] ⚠ 
-Berikut adalah fitur admin grup yang ada pada bot ini!
-
--❥ *${prefix}add*
--❥ *${prefix}kick* @tag
--❥ *${prefix}promote* @tag
--❥ *${prefix}demote* @tag
--❥ *${prefix}tagall*
--❥ *${prefix}del*
-
-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-⚠ [ *Owner Group Only* ] ⚠
-Berikut adalah fitur owner grup yang ada pada bot ini!
--❥ *${prefix}kickall*
-*Owner Group adalah pembuat grup.*
-`
+    [ *Hanya untuk Admin Grup* ]  
+    
+    ➵ *${prefix}add*
+    ➵ *${prefix}kick* @tagUser
+    ➵ *${prefix}promote* @tagUser
+    ➵ *${prefix}demote* @tagUser
+    ➵ *${prefix}tagall*
+    ➵ *${prefix}del*
+    
+    
+    Menu buat owner
+    ➵ *${prefix}kickall*
+    `
 }
+
 
 exports.textDonasi = () => {
     return `
-Bot ini dibuat dengan Javascript oleh R-Dev
-
-Thanks Reference for ArugaZ
-`
+    Terimakasih telah menggunakan bot ini, jika RDP mati maka bot tidak dapat digunakan, support developer sewa RDP mahal sob :(
+    
+Direct Donasi :
+OVO \t08985665498
+Dana \t08985665498
+GoPay \t08985665498
+Link Aja \t08985665498
+    
+Donasi yang masuk akan digunakan untuk pengembangan dan pengoperasian R-Bot.
+    Terimakasih  -  *Rizqy as DEV*`
 }

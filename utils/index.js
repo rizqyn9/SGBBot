@@ -1,5 +1,3 @@
-const request = require('request')
-const fs = require('fs-extra')
 const chalk = require('chalk')
 const moment = require('moment-timezone')
 moment.tz.setDefault('Asia/Jakarta').locale('id')
@@ -50,21 +48,6 @@ const isFiltered = (from) => {
 }
 
 /**
- *Download any media from URL
- *@param {String} url
- *@param {Path} locate
- *@param {Callback} callback
- */
-const download = (url, path, callback) => {
-  request.head(url, () => {
-    request(url)
-      .pipe(fs.createWriteStream(path))
-      .on('close', callback)
-  })
-}
-
-
-/**
  * Add number to filter
  * @param  {String} from
  */
@@ -83,6 +66,5 @@ module.exports = {
     processTime,
     isUrl,
     color,
-    messageLog,
-	download
+    messageLog
 }
