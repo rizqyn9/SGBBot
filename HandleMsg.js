@@ -133,7 +133,6 @@ module.exports = HandleMsg = async (aruga, message) => {
         const isKasar = await cariKasar(chats)
 
         if (command == 'addgrup' == isOwnerBot){
-            aruga.reply(from,`Sukses ${groupId}`,id)
             groupList.push(groupId)
             fs.writeFileSync('./feature/groupList.json', JSON.stringify(groupList))
             
